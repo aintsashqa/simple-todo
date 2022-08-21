@@ -27,6 +27,9 @@ func encodeErrorResponse(_ context.Context, err error, w http.ResponseWriter) {
 	case internal.ErrNotFound:
 		statusCode = http.StatusNotFound
 		break
+	case ErrParseBody, ErrParseParam, ErrParseQuery:
+		statusCode = http.StatusBadRequest
+		break
 	}
 
 	w.WriteHeader(statusCode)
