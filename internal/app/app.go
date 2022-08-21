@@ -22,7 +22,11 @@ func Run() {
 	{
 		l = log.NewJSONLogger(os.Stdout)
 		l = log.NewSyncLogger(l)
-		l = log.With(l, "service", "simple-todo")
+		l = log.With(l,
+			"service", "simple-todo",
+			"time", log.DefaultTimestamp,
+			"caller", log.DefaultCaller,
+		)
 	}
 
 	level.Info(l).Log("msg", "service started")
