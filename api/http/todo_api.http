@@ -1,0 +1,25 @@
+### Create new todo
+POST http://localhost:8080/api/todo
+Content-Type: application/json
+
+{
+    "title": "",
+    "description": null
+}
+
+### Get todos list
+GET http://localhost:8080/api/todo
+Content-Type: application/json
+
+### Update existing todo
+PUT http://localhost:8080/api/todo/{id}
+Content-Type: application/json
+
+{
+    "title": "",
+    "description": null
+}
+
+### Change todo to completed
+POST http://localhost:8080/api/todo/{id}
+Content-Type: application/json
